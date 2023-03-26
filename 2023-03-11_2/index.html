@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /**
+     * 2023-03-11 javascript study
+     * 산술연산자2, 논리연산자2
+     */
+    let a = 2;
+    // a = a + 5;
+    a += 5;
+    console.log("a += 5", a);
+
+    let b = 5;
+    // b = b - 3;
+    b -= 3;
+    console.log("b -= 3", b);
+
+    let c = 10;
+    // c = c * 2;
+    c *= 2;
+    console.log("c *= 2", c);
+
+    let d = 30;
+    // d /= 10;
+    d /= 10;
+    console.log("d /= 10", d);
+
+    // 제곱 (es6 이후)
+    let num = 2;
+    console.log("**", num ** 3);
+
+    // ++, --
+    let e = 10;
+    let f = 11;
+
+    // e = f++; // post increment
+    // console.log("e = f++", e);
+    // console.log("f", f);
+
+    e = ++f; // pre increment
+    console.log("e = ++f", e);
+    console.log("f", f);
+
+    let g = 5;
+    let h = 3;
+    // post decreament
+    // g = h--;
+    // g = h;
+    // h -= -1; (h = h - 1)
+    // console.log("g = h--", g);
+    // console.log("h", h);
+    // pre decrement
+    g = --h;
+    // h -= -1; (h = h - 1)
+    // g = h;
+    console.log("g = --h", g);
+    console.log("h", h);
+
+    // 논리연산자 ?? (nullish coalescing) - es6 이후
+    // a ?? b a가 null, undefined면 b를 return, 아니면 a를 return
+    // let name = null;
+    let name = false;
+    let text = "string";
+    console.log("name ?? text", name ?? text);
+  </script>
+</html>

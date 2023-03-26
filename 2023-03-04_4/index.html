@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /**
+     * 2023-03-04 javascript study
+     * 논리연산자
+     * and, or, not
+     */
+
+    // and(&&)
+    // a와 b가 둘다 true면 true
+    // 앞에 조건이 true면 && 연산자 뒤의 결과를 반환한다.
+    // 앞에 조건이 false면 false를 반환한다.
+    console.log("and(&&)", true && "and true");
+
+    // or(||)
+    // a와 b중 하나라도 true면 true
+    console.log("or(||)", true || false);
+    console.log("or(||)", false || false);
+
+    // not(!)
+    // true를 false로 false를 true로 변환
+    // 반드시 boolean 타입으로 변환된다.
+    console.log("!true", !true);
+    console.log("!false", !false);
+    console.log("!test", !"test");
+
+    /**
+     * 원시타입의 true, false
+     * string: 빈 문자열은 false, 나머지는 true
+     * number: 0은 false, 나머지는 true
+     * boolean: true면 true, false면 false
+     * null: false
+     * undefined: false
+     */
+
+    // not(!) 논리연산자를 통해서 boolean으로 변환 (!!)
+    // ! -> 강제로 boolean 타입으로 변환 (다만 반대로 true -> false) -> ! false -> true
+    console.log("string true", !!"string");
+    console.log("string false", !!"");
+    console.log("number true", !!10);
+    console.log("number false", !!0);
+  </script>
+</html>
