@@ -89,5 +89,25 @@
     console.log("target", target);
     console.log("source", source);
     console.log("combine2", combine2);
+
+    const student = {
+      className: "A",
+    };
+
+    const student1 = {
+      ...student,
+      name: "chris",
+      age: 31,
+    };
+    student1.className = "B";
+
+    const student2 = {
+      ...student,
+      name: "judy",
+      age: 24,
+    };
+
+    console.log("student1", student1);
+    console.log("student2", student2);
   </script>
 </html>
