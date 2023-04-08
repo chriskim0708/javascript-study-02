@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 2023-04-08 javascript study
+       * 반복문
+       */
+
+      /**
+       * while
+       * while (조건문)
+       * 조건이 거짓(false)면 종료
+       */
+
+      let n = 0;
+      while (n < 3) {
+        n++;
+        console.log("n", n);
+      }
+
+      /**
+       * for (es6 이전 가장 많이 사용)
+       * for in (객체 순회 시 성능상의 문제로 쓰이지 않음)
+       * for of (es6 이후)
+       * for (변수 선언(초기화); 조건문; 증감문)
+       * 조건이 참이면 계속 실행
+       * 증감은 조건이 참일 때 얼마나 증감시킬 것인지
+       */
+
+      for (let i = 0; i < 10; i++) {
+        console.log("i", i);
+      }
+
+      // 역순 반복
+      for (let i = 10; i >= 0; i--) {
+        console.log("reverse i", i);
+      }
+
+      // 증감 조건 변경
+      for (let i = 2; i < 100; i = i * 2) {
+        console.log("multiply i", i);
+      }
+
+      // break: for문 종료
+      for (let i = 2; i < 100; i = i * 2) {
+        if (i >= 32) {
+          break;
+        }
+        console.log("break i", i);
+      }
+
+      // continue: 조건에 따라 건너뛰지만 반복문은 계속 실행
+      // 5의 배수만 찍는다
+      for (let i = 0; i <= 20; i++) {
+        if (i === 0) {
+          continue;
+        }
+        if (i % 5 !== 0) {
+          continue;
+        }
+        console.log("continue i", i);
+      }
+    </script>
+  </body>
+</html>

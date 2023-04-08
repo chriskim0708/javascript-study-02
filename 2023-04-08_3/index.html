@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 2023-04-08 javascript study
+       * 별 그리기
+       * document.write() : body에 문자를 찍어준다
+       * document.write('*');
+       */
+
+      // 문자 찍기
+      document.write("*");
+      document.write("*");
+      document.write("*");
+      document.write("<br />");
+      document.write("*");
+      document.write("*");
+      document.write("*");
+      document.write("<br />");
+      document.write("----------------------------------");
+      document.write("<br />");
+      document.write("정사각형 별 찍기");
+      document.write("<br />");
+      document.write("<br />");
+
+      // 정사각형 별 찍기
+      // 한 줄당 5개의 별의 있는 5줄의 사각형 만들기
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+
+      document.write("----------------------------------");
+      document.write("<br />");
+      document.write("삼각형 별 찍기");
+      document.write("<br />");
+      document.write("<br />");
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+
+      document.write("----------------------------------");
+      document.write("<br />");
+      document.write("삼각형 별 찍기 - 역순");
+      document.write("<br />");
+      document.write("<br />");
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 4; j > i; j--) {
+          document.write("&nbsp;");
+        }
+        for (let j = 0; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+
+      document.write("----------------------------------");
+      document.write("<br />");
+      document.write("거꾸로 삼각형 별 찍기");
+      document.write("<br />");
+      document.write("<br />");
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 5; j > i; j--) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+
+      document.write("----------------------------------");
+      document.write("<br />");
+      document.write("거꾸로 삼각형 별 찍기 - 역순");
+      document.write("<br />");
+      document.write("<br />");
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < i; j++) {
+          document.write("&nbsp;");
+        }
+        for (let j = 5; j > i; j--) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+
+      document.write("----------------------------------");
+      document.write("<br />");
+      document.write("정삼각형 그리기");
+      document.write("<br />");
+      document.write("<br />");
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 4; j > i; j--) {
+          document.write("&nbsp;");
+        }
+        for (let j = 0; j <= i; j++) {
+          document.write("*");
+        }
+        for (let j = 1; j <= i; j++) {
+          document.write("*");
+        }
+        document.write("<br />");
+      }
+    </script>
+  </body>
+</html>
