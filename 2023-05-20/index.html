@@ -1,0 +1,85 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .selected {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="menu">
+      <li>Home</li>
+      <li>Products</li>
+      <li class="selected">Customer Support</li>
+      <li>Careers</li>
+      <li>News</li>
+      <li>About Us</li>
+    </ul>
+
+    <div>
+      <div class="current">1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <script>
+      "use strict";
+      /**
+       * 2023-05-20 javascript study
+       * siblings selector
+       */
+      const parent = document.querySelector("#menu");
+      const children = parent.querySelectorAll("li");
+      const selected = parent.querySelector(".selected");
+      const selectedNextEl = selected.nextElementSibling;
+      const selectedPrevEl = selected.previousElementSibling;
+
+      console.log("parent", parent);
+      console.log("children", children);
+      console.log("selected", selected);
+
+      console.log("selected prev", selectedPrevEl);
+
+      console.log("selected next", selectedNextEl);
+      console.log("selected next next", selectedNextEl.nextElementSibling);
+      console.log(
+        "selected next next next",
+        selectedNextEl.nextElementSibling.nextElementSibling
+      );
+      console.log(
+        "selected next next next next",
+        selectedNextEl.nextElementSibling.nextElementSibling.nextElementSibling
+      );
+
+      // next element를 하나의 배열로 담기
+      const current = parent.querySelector(".selected");
+
+      function nextSiblingsAll(el) {
+        const nextSiblings = [];
+        let nextSibling = el.nextElementSibling;
+
+        while (nextSibling) {
+          nextSiblings.push(nextSibling);
+          nextSibling = nextSibling.nextElementSibling;
+        }
+
+        return nextSiblings;
+      }
+
+      const nextSiblings = nextSiblingsAll(current);
+      const divNextSiblings = nextSiblingsAll(
+        document.querySelector(".current")
+      );
+
+      console.log("current next siblings", nextSiblings);
+      console.log("div current next siblings", divNextSiblings);
+
+      // 숙제 - 선택된 요소의 이전 요소들을 전부 가져오는 함수 만들기
+    </script>
+  </body>
+</html>

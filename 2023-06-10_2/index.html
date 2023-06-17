@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        padding: 50px;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="id" />
+    <input type="password" id="password" />
+    <button type="button" id="submit">submit</button>
+    <script>
+      "use strict";
+      /**
+       * 2023-06-10 키보드 이벤트
+       * 키보드 이벤트는 발생하는 범위가 제한적
+       * 포커싱이 가능한 element 혹은 window 전역에서만 사용
+       * 대부분은 input 관련 이벤트로 활용
+       * keydown, keyup, keypress
+       * keydown: 키보드 키를 누른 순간 발생
+       * keyup: 키보드 키를 눌렀다가 뗐을 때 발생
+       * keypress: 키보드를 누른 상태 (사용 권장하지 않음)
+       */
+
+      const inputId = document.querySelector("#id");
+      const inputPassword = document.querySelector("#password");
+      const submitBtn = document.querySelector("#submit");
+
+      const onSubmit = () => {
+        console.log("submit");
+      };
+
+      inputId.addEventListener("keydown", (event) => {
+        // console.log("keydown", event);
+        if (event.keyCode === 13) {
+          console.log("keydown enter", event);
+          inputPassword.focus();
+        }
+      });
+      inputId.addEventListener("keyup", (event) => {
+        // console.log("keyup", event);
+      });
+      inputPassword.addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+          console.log("keydown enter", event);
+          onSubmit();
+        }
+      });
+      submitBtn.addEventListener("click", onSubmit);
+    </script>
+  </body>
+</html>

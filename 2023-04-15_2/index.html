@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 2023-04-15 javascript study
+       * for of (es6 이후)
+       * 객체 순환 x
+       * iterable 객체를 순환 가능
+       * [Symbol.iterator]를 가진 객체를 iterable 객체라고 표현
+       */
+      const arr = ["a", "b", "c"];
+      console.log("arr", arr);
+      for (const element of arr) {
+        console.log("element", element);
+      }
+
+      for (let i = 0; i < arr.length; i++) {
+        console.log("for element", arr[i]);
+      }
+
+      const obj = { d: 1, e: 1, f: 1 };
+      const keys = Object.keys(obj);
+      const values = Object.values(obj);
+      const entries = Object.entries(obj);
+      console.log("obj keys", keys);
+      console.log("obj values", values);
+      console.log("obj entries", entries);
+
+      for (const entry of entries) {
+        console.log("entry", entry);
+        console.log("key", entry[0]);
+        console.log("value", entry[1]);
+      }
+
+      for (const [key, value] of entries) {
+        console.log("key", key);
+        console.log("value", value);
+      }
+    </script>
+  </body>
+</html>

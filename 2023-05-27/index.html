@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="height: 3000px"></div>
+    <script>
+      "use strict";
+      /**
+       * 2023-05-27 event listener
+       * addEventListener(등록할 이벤트 종류, 콜백 함수, 옵션)
+       * document에서 사용자가 하는 특정 행위에 대한 이벤트를 등록할 수 있음
+       */
+
+      // load: 웹페이지가 동작하기 위한 모든 파일이 다운로드가 완료되었을 때 동작
+      // window 객체에서만 사용
+      window.addEventListener("load", () => {
+        console.log("window loaded");
+      });
+
+      // scroll: 스크롤을 가지고 있는 dom 객체에서 스크롤이 움직일 때 동작
+      window.addEventListener(
+        "scroll",
+        (event) => {
+          const body = document.querySelector("body");
+          // console.log("scroll height", body.scrollHeight);
+          const scrollTop = body.scrollTop;
+          // console.log("scroll top", scrollTop);
+          if (scrollTop >= 100) {
+            alert("scrollTop 100");
+          }
+        },
+        { once: true } // once: 이벤트를 딱 한번만 발생시킴
+      );
+
+      // resize: 브라우저의 사이즈가 변경될 때마다 발생
+      window.addEventListener("resize", () => {
+        console.log("browser resize");
+      });
+    </script>
+  </body>
+</html>

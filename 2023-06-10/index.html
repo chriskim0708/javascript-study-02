@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="progressbar"
+      style="
+        position: relative;
+        margin: 100px;
+        width: 300px;
+        height: 20px;
+        background-color: #eee;
+        overflow: hidden;
+      "
+    >
+      <div
+        id="progressHandle"
+        style="
+          width: 20px;
+          height: 20px;
+          background-color: #000;
+          position: absolute;
+        "
+      ></div>
+    </div>
+    <span id="percentage"></span>
+    <script>
+      "use strict";
+      /**
+       * 2023-06-10 progressbar 만들기
+       */
+
+      // 과제
+      // 요건
+      // rangebar 구현
+      // 0% ~ 100%까지 텍스트로 표시해야함
+      // bar에 있는 box를 드래그해서 양옆으로 이동 가능해야하고 상하로는 이동하면 안됨
+      // bar 내에 box는 양옆 끝 이상으로 이동될 수 없음
+      // bar: width 300px, height: 20px
+      // bar - box: width: 20p, height: 20px
+
+      const bar = document.querySelector("#progressbar");
+      const handler = document.querySelector("#progressHandle");
+      const offsetBar = bar.getBoundingClientRect();
+      const offsetHandler = handler.getBoundingClientRect();
+      const maxMoveX = offsetBar.width - offsetHandler.width;
+      const percentageText = document.querySelector("#percentage");
+
+      let isDragMove = false;
+
+      window.addEventListener("load", () => {
+        percentageText.innerHTML = "0%";
+      });
+
+      bar.addEventListener("mousemove", (event) => {
+        if (isDragMove) {
+          let x = event.x - offsetBar.x - offsetHandler.width / 2;
+          if (x <= 0) {
+            x = 0;
+          }
+          if (x >= maxMoveX) {
+            x = maxMoveX;
+          }
+          const percentage = parseInt((x / maxMoveX) * 100);
+          percentageText.innerHTML = `${percentage}%`;
+          handler.style.transform = `translateX(${x}px)`;
+        }
+      });
+      bar.addEventListener("mouseleave", (event) => {
+        isDragMove = false;
+      });
+      handler.addEventListener("mousedown", (event) => {
+        isDragMove = true;
+        console.log("mousedown: drag start");
+      });
+      handler.addEventListener("mouseup", () => {
+        isDragMove = false;
+        console.log("mouseup: drag end");
+      });
+      // handler.addEventListener("mouseenter", (event) => {
+      //   event.stopPropagation();
+      // });
+      // handler.addEventListener("mouseleave", (event) => {
+      //   event.stopPropagation();
+      // });
+    </script>
+  </body>
+</html>
